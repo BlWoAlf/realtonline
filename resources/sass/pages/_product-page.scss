@@ -1,0 +1,30 @@
+.section__product{
+    background: url('../../images/catalog_bg.png') no-repeat center top;
+    background-size: 100% auto;
+
+    padding: 27px 0px 48px;
+
+    .product__description{
+        padding-top: 18px;
+    }
+
+    p, .text{
+        color: $grey-dark-color;
+    }
+}
+
+.product__price_page{
+    margin: 16px 0px 36px;
+    color: $grey-dark-color;
+}
+
+.product__catalog{
+    .catalog__header{
+        color: $grey-dark-color;
+        margin-bottom: 24px;
+    }
+
+    .product{
+        margin-bottom: 24px;
+    }
+}

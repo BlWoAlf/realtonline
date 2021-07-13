@@ -1,0 +1,33 @@
+@import 'utils/variables';
+@import 'utils/placeholders';
+@import 'utils/functions';
+
+@import 'vendors/adfm';
+@import 'vendors/fonts';
+@import 'vendors/fontawesome';
+
+@import 'base/base';
+@import 'base/colors';
+@import 'base/typography';
+
+@import 'layout/section';
+@import 'layout/list';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/section__filter';
+@import 'layout/section__feedback';
+@import 'layout/section__about';
+
+@import 'components/logo';
+@import 'components/menu';
+@import 'components/contacts';
+@import 'components/service';
+@import 'components/product';
+@import 'components/filter';
+@import 'components/gallary';
+@import 'components/product-section__info';
+@import 'components/burger-button';
+
+@import 'pages/main-page';
+@import 'pages/product-page';
+@import 'pages/about-page';

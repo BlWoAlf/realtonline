@@ -1,0 +1,9 @@
+.header{
+    @extend %flex-center-row;
+    min-height: 100px;
+    background: $layout-color;
+    padding: 10px 0px;
+    .row{
+        align-items: center;
+    }
+}

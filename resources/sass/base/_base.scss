@@ -1,0 +1,33 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    min-width: 320px;
+    background-color: $white;
+}
+
+.webtolk-logo{
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 21px;
+    color: #000000;
+}
+.webtolk-logo_orange{
+    color: #ff6600;
+}
+
+.pic-link{
+    a{
+        @extend %flex-center;
+        @extend %clean-link;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.image{
+    img{
+        max-width: 100%;
+    }
+}

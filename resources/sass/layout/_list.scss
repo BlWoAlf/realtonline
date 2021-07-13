@@ -1,0 +1,8 @@
+.horizontal-list{
+    @extend %clean-menu;
+    @extend %flex-horizontal;
+}
+
+.vertical-list{
+    @extend %clean-menu;
+}

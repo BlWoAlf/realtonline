@@ -1,0 +1,45 @@
+.menu{
+    a{
+        color: $orange-yellow;
+
+        &:hover{
+            color: $orange-color;
+            transition: 0.5s;
+        }
+    }
+}
+
+.header__menu{
+    a{
+        padding: 10px 5px;
+    }
+}
+
+.footer__menu{
+    margin-bottom: 20px;
+    ul{
+        justify-content: center;
+    }
+    a{
+        padding: 10px 5px;
+    }
+
+    .menu__list{
+        @extend %clean-menu;
+        text-align: center;
+
+        @media (min-width: 992px)
+        {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
+
+.col__menu{
+    display: none;
+
+    @media (min-width: 768px) {
+        display: block;
+    }
+}

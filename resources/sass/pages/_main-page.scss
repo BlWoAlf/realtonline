@@ -1,0 +1,19 @@
+.section__main-catalog{
+    background: url('../../images/catalog_bg.png') no-repeat center top;
+    background-size: 100% auto;
+    padding: 96px 0px;
+
+    .sub-header-text{
+        max-width: 630px;
+        margin: 0 auto;
+        color: $grey-dark-light;
+    }
+
+    .product{
+        margin-bottom: 44px;
+    }
+}
+
+.menu-services{
+    margin-bottom: 96px;
+}

@@ -1,0 +1,12 @@
+.header__burger-button{
+    float: right;
+    cursor: pointer;
+    color: $white-color;
+    margin-top: 5px;
+    i{
+        font-size: 30px;
+    }
+    @media (min-width: 992px) {
+        display: none;
+    }
+}

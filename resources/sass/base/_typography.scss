@@ -1,0 +1,224 @@
+$primary-font: 'Open Sans';
+$secondary-font: 'Prosto One';
+
+$standart-text-size: 14px;
+$standart-style: normal;
+$standart-weight: normal;
+$header-wight: bold;
+
+$h1-margin: 48px;
+
+$standart-text-line-height: 19px;
+
+body{
+    font-family: $primary-font;
+    font-style: $standart-style;
+    font-weight: $standart-weight;
+}
+
+.h1-header{
+    font-size: 36px;
+    line-height: 49px;
+    margin-bottom: $h1-margin;
+    font-weight: $header-wight;
+}
+
+.h1-margin-header{
+    margin-bottom: $h1-margin;
+}
+
+.h2-header{
+    font-weight: $header-wight;
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 16px;
+}
+
+.sub-header-text{
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+}
+
+.text{
+    font-size: $standart-text-size;
+    line-height: $standart-text-line-height;
+    margin-bottom: 16px;
+}
+.text_no-margin{
+    margin-bottom: 0px;
+}
+.align-center{
+    text-align: center;
+}
+
+.menu{
+    font-family: $secondary-font;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.header__contacts{
+    text-align: right;
+}
+
+.contacts__phone{
+    font-family: $secondary-font;
+    font-size: 12px;
+    line-height: 16px;
+    @media (min-width: 1200px) {
+        font-size: 24px;
+        line-height: 30px;
+    }
+}
+
+.contacts__socical{
+    font-family: $secondary-font;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.footer__contacts{
+    text-align: center;
+}
+
+.service__header{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.service__sub-item{
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.product__name, .product__price{
+    font-size: 14px;
+    line-height: 19px;
+    @media (min-width: 1200px) {
+        font-size: 18px;
+        line-height: 25px;   
+    }
+}
+
+.product__price{
+    font-weight: bold;
+}
+
+.product__button{
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.categories__category{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.filter__field{
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.feedback__face{
+    text-align: center;
+
+    .face__name{
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    .face__position{
+        font-size: 14px;
+        line-height: 19px;
+    }
+}
+
+.feedback__form{
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.product__price_info{
+    font-weight: 800;
+}
+
+.product__price_info-one{
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.pdoduct__main-info-box{
+    .main-info-box__header{
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 36px;
+    }
+
+    .main-info-box__content{
+        font-size: 14px;
+        line-height: 21px;
+    }
+}
+
+.product__contacts-info-box{
+    .contacts-info-box__number{
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 25px;   
+    }
+
+    .contacts-info-box__button{
+        font-size: 14px;
+        line-height: 19px;
+    }
+
+    .contacts-info-box__sub-info{
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+.product__description{
+    @extend .text;
+}
+
+.product__catalog{
+    .catalog__header{
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 36px;
+        text-align: center;
+    }
+}
+
+.about__text{
+    .about__first-line{
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .about__second-line{
+        font-size: 14px;
+        line-height: 19px;
+    }
+}
+
+.about__button{
+    font-size: 14px;
+    line-height: 19px;
+    text-shadow: 0px 1px 1px $product-shadow
+}
+
+.about-page__name{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 8px;
+}

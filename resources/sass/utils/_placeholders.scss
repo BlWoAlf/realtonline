@@ -1,0 +1,41 @@
+%clean-menu{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+%flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%flex-center-column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+%flex-horizontal{
+    display: flex;
+    flex-direction: row;
+}
+
+%flex-center-row{
+    @extend %flex-horizontal;
+    align-items: center;
+}
+
+%flex-horizontal-center{
+    @extend %flex-horizontal;
+    justify-content: center;
+}
+
+%clean-link{
+    text-decoration: none;
+}
+
+%img-fill{
+    width: 100%;
+    height: 100%;
+}

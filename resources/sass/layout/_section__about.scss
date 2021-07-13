@@ -1,0 +1,51 @@
+.section__about{
+    min-height: 419px;
+    background: url('../../images/filter_bg.jpg') no-repeat center;
+    background-size: cover;
+    padding: 53px 0px 71px;
+
+    .about__content{
+        margin-bottom: 22px;
+    }
+
+    .about__header{
+        color: $light-green;
+        padding-top: 22px;
+        margin-bottom: 54px;
+    }
+
+    .about__item{
+        color: $white-color;
+        margin-bottom: 32px;
+    }
+
+    .about__img{
+        width: 100%;
+        // text-align: center;
+
+        img{
+            max-width: 100%;
+        }
+    }
+
+    .about__first-line{
+        margin-bottom: 8px;
+    }
+
+    .about__footer{
+        text-align: center;
+    }
+
+    .about__button{
+        width: 250px;
+        height: 57px;
+        background: $light-green;
+        color: $white-color;
+        border: none;
+        border-radius: 4px;
+
+        &:focus{
+            outline: none;
+        }
+    }
+}

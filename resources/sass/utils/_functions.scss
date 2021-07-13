@@ -1,0 +1,3 @@
+@function absoluteElemCentered($relative_length, $elem_length){
+    @return ($relative_length / 2) - ($elem_length / 2);
+}
