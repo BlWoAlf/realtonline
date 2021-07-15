@@ -21,12 +21,11 @@
                 </div>
                 <div class="col-md-5 col-lg-8 col-xl-7 col-xxl-6 offset-xxl-1 col__menu">
                     <nav class="header__menu">
+                        @php($links = \App\Models\Adfm\Menu::getData('main'))
                         <ul class="menu horizontal-list menu__list">
-                            <li class="list__item"><a href="">Главная</a></li>
-                            <li class="list__item"><a href="">Недвижимость</a></li>
-                            <li class="list__item"><a href="">Услуги</a></li>
-                            <li class="list__item"><a href="">О компании</a></li>
-                            <li class="list__item"><a href="">Контакты</a></li>
+                            @foreach ($links[0] as $el)
+                                <li class="list__item"><a href="{{$el->link}}">{{$el->title}}</a></li>                                
+                            @endforeach
                         </ul>
                     </nav>
                 </div>
@@ -59,11 +58,9 @@
                 <div class="col-12">
                     <div class="footer__menu">
                         <ul class="menu  menu__list">
-                            <li class="list__item"><a href="">Главная</a></li>
-                            <li class="list__item"><a href="">Недвижимость</a></li>
-                            <li class="list__item"><a href="">Услуги</a></li>
-                            <li class="list__item"><a href="">О компании</a></li>
-                            <li class="list__item"><a href="">Контакты</a></li>
+                            @foreach ($links[0] as $el)
+                                <li class="list__item"><a href="{{$el->link}}">{{$el->title}}</a></li>                                
+                            @endforeach
                         </ul>
                     </div>
                 </div>

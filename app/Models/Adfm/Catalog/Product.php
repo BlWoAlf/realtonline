@@ -18,6 +18,7 @@ class Product extends Model
 
     protected $casts = [
         'meta' => 'array',
+        'properties' => 'array',
     ];
 
     protected $fillable = [
@@ -25,7 +26,9 @@ class Product extends Model
         'slug',
         'price',
         'square',
-        'propertes',
+        'type',
+        'room_count',
+        'properties',
         'content',
         'article',
         'meta'
@@ -40,5 +43,22 @@ class Product extends Model
     {
         return $this->morphMany(File::class, 'fileable')
             ->where('model_relation', '=', 'files')->orderBy('sort');
+    }
+
+    public function getFormatPriceAttribute()
+    {
+        $value = number_format($this->price, 0, '.', ' ');
+        return $value;
+    }
+
+    public function getMinSquareAttribute()
+    {
+        $square = 1;
+        if($this->square == 0){
+            return $square;
+        }
+        else{
+            return $this->square;
+        }
     }
 }

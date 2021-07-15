@@ -4,61 +4,111 @@
 @section('content')
 <section class="section section__product">
     <div class="container">
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    
+            <!-- Background of PhotoSwipe. 
+                 It's a separate element as animating opacity is faster than rgba(). -->
+            <div class="pswp__bg"></div>
+        
+            <!-- Slides wrapper with overflow:hidden. -->
+            <div class="pswp__scroll-wrap">
+        
+                <!-- Container that holds slides. 
+                    PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                    Don't modify these 3 pswp__item elements, data is added later on. -->
+                <div class="pswp__container">
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                </div>
+        
+                <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+                <div class="pswp__ui pswp__ui--hidden">
+        
+                    <div class="pswp__top-bar">
+        
+                        <!--  Controls are self-explanatory. Order can be changed. -->
+        
+                        <div class="pswp__counter"></div>
+        
+                        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        
+                        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        
+                        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        
+                        <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                        <!-- element will get class pswp__preloader--active when preloader is running -->
+                        <div class="pswp__preloader">
+                            <div class="pswp__preloader__icn">
+                              <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                        <div class="pswp__share-tooltip"></div> 
+                    </div>
+        
+                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                    </button>
+        
+                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                    </button>
+        
+                    <div class="pswp__caption">
+                        <div class="pswp__caption__center"></div>
+                    </div>
+        
+                </div>
+        
+            </div>
+        
+        </div>
         <div class="section__header product__header">
             <h1 class="h1-header text_no-margin">{{$product->title}}</h1>
         </div>
         <div class="section__content">
-            <div class="product__price product__price_page">3 500 000 руб.</div>
+            <div class="product__price product__price_page">{{$product->format_price}} руб.</div>
             <div class="row">
                 <div class="col-12 col-md-8">
                     <div class="product__gallary">
-                        <div class="gallary__view-photo">
-                            <div class="gallary__img">
-                                <img src="../images/photo_view.jpg">
+                        <div class="swiper-container">
+                            @if (count($product->files) > 0)
+                            <div class="swiper-wrapper">                                                                    
+                                @foreach ($product->files as $file)
+                                    <div class="swiper-slide">
+                                        <div class="gallary__view-photo gallary__view">
+                                            <div class="gallary__img">
+                                                {!! ImageCache::get($file, ['w' => 870, 'h' => 422, 'fit' => 'crop']); !!}
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
                             </div>
+                            <div class="swiper-button-prev gallary__photo-slide-button"></div>
+                            <div class="swiper-button-next gallary__photo-slide-button"></div>
+                            @else
+                            <div class="gallary__view-photo">
+                                <div class="gallary__img">
+                                    <img src="{{asset('images/no-image.png')}}">
+                                </div>
+                            </div>
+                            @endif
                         </div>
                         <div class="gallary__trumbnails">
                             <div class="row">
+                                @if (count($product->files) > 0)
+                                @foreach ($product->files as $photo)
                                 <div class="col-6 col-sm-3">
                                     <div class="gallary__mini-photo">
-                                        <img src="../images/photo.jpg">
+                                        {!! ImageCache::get($photo, ['w' => 257, 'h' => 130, 'fit' => 'crop']); !!}
                                     </div>
                                 </div>
-                                <div class="col-6 col-sm-3">
-                                    <div class="gallary__mini-photo">
-                                        <img src="../images/photo.jpg">
-                                    </div>
-                                </div>
-                                <div class="col-6 col-sm-3">
-                                    <div class="gallary__mini-photo">
-                                        <img src="../images/photo.jpg">
-                                    </div>
-                                </div>
-                                <div class="col-6 col-sm-3">
-                                    <div class="gallary__mini-photo">
-                                        <img src="../images/photo.jpg">
-                                    </div>
-                                </div>
-                                <div class="col-6 col-sm-3">
-                                    <div class="gallary__mini-photo">
-                                        <img src="../images/photo.jpg">
-                                    </div>
-                                </div>
-                                <div class="col-6 col-sm-3">
-                                    <div class="gallary__mini-photo">
-                                        <img src="../images/photo.jpg">
-                                    </div>
-                                </div>
-                                <div class="col-6 col-sm-3">
-                                    <div class="gallary__mini-photo">
-                                        <img src="../images/photo.jpg">
-                                    </div>
-                                </div>
-                                <div class="col-6 col-sm-3">
-                                    <div class="gallary__mini-photo">
-                                        <img src="../images/photo.jpg">
-                                    </div>
-                                </div>
+                                @endforeach
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -67,12 +117,12 @@
                     <div class="product__info">
                         <div class="product__price-info-box">
                             <div class="product__price-info">
-                                <div class="product__price product__price_info">{{$product->price}} ₽</div>
-                                <div class="product__price_info-one">(93800 ₽ за м2)</div>
+                                <div class="product__price product__price_info">{{$product->format_price}} ₽</div>
+                                <div class="product__price_info-one">({{round($product->price/$product->min_square)}} ₽ за м2)</div>
                             </div>
                             <div class="service__image-block product__price-image">
                                 <div class="service__image">
-                                    <img src="../images/dom.png">
+                                    <img src="{{asset('images/dom.png')}}">
                                 </div>
                             </div>
                         </div>
@@ -81,15 +131,15 @@
                             <div class="main-info-box__content">
                                 <div class="main-info-box__item">
                                     <div class="main-info-box__prop-name">Этаж</div>
-                                    <div class="main-info-box__prop-value">23\28</div>
+                                    <div class="main-info-box__prop-value">{{$product->properties['floor']}}</div>
                                 </div>
                                 <div class="main-info-box__item">
                                     <div class="main-info-box__prop-name">Площадь</div>
-                                    <div class="main-info-box__prop-value">23 кв. м.</div>
+                                    <div class="main-info-box__prop-value">{{$product->square}} кв. м.</div>
                                 </div>
                                 <div class="main-info-box__item">
                                     <div class="main-info-box__prop-name">Лифт</div>
-                                    <div class="main-info-box__prop-value">Есть</div>
+                                    <div class="main-info-box__prop-value">@if ($product->properties['elevator'] == 1) Есть @else Нету @endif</div>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +147,7 @@
                             <div class="contacts-info-box__number">
                                 <a href="tel:+79233337000">+7-923-333-7000</a>
                             </div>
-                            <button class="contacts-info-box__button">Задать вопрос</button>
+                            <a href="#section__feedback"><button class="contacts-info-box__button">Задать вопрос</button></a>
                             <div class="contacts-info-box__sub-info">Будут предложены разные варианты общения</div>
                         </div>
                     </div>
@@ -119,9 +169,11 @@
                                         <div class="product__image">
                                             @if (count($product->files) > 0)
                                                 {!! ImageCache::get($product->files[0], ['w' => 300, 'h' => 163, 'fit' => 'crop']); !!}
+                                            @else
+                                                <img src="{{asset('images/no-image-min.png')}}">
                                             @endif
                                         </div>
-                                        <div class="product__price">{{$product->price}} руб.</div>
+                                        <div class="product__price">{{$product->format_price}} руб.</div>
                                         <button class="product__button">Смотреть подробнее</button>
                                     </a>
                                 </div>
@@ -187,10 +239,10 @@
                 <div class="field__name">Стоимость</div>
                 <div class="field__box field__box_from-to">
                     <label>
-                        <span>От</span> <input type="text" name="filter[price:>]">
+                        <span>От</span> <input type="number" name="filter[price:>]">
                     </label>
                     <label>
-                        <span>До</span> <input type="text" name="filter[price:<]">
+                        <span>До</span> <input type="number" name="filter[price:<]">
                     </label>
                 </div>
             </div>
@@ -198,10 +250,10 @@
                 <div class="field__name">Площадь</div>
                 <div class="field__box field__box_from-to">
                     <label>
-                        <span>От</span> <input type="text" name="filter[square:>]">
+                        <span>От</span> <input type="number" name="filter[square:>]">
                     </label>
                     <label>
-                        <span>До</span> <input type="text" name="filter[square:<]">
+                        <span>До</span> <input type="number" name="filter[square:<]">
                     </label>
                 </div>
             </div>
@@ -214,4 +266,5 @@
         </form>
     </div>
 </section>
+@include('adfm::public.feedback-section')
 @endsection

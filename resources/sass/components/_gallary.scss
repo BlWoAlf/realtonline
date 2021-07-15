@@ -25,10 +25,23 @@
 }
 
 .gallary__mini-photo{
-    max-height: 90px;
+    max-height: 130px;
 }
 
 .gallary__view-photo, .gallary__mini-photo{
     margin-bottom: 16px;
     overflow: hidden;
+}
+
+.gallary__photo-slide-button::after{
+    color: $layout-color;
+}
+
+.pswp img {
+    max-width: none;
+    object-fit: contain;
+}
+
+.pswp__img--placeholder--blank{
+    display: none !important;
 }

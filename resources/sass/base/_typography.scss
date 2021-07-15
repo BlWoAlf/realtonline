@@ -17,8 +17,13 @@ body{
 }
 
 .h1-header{
-    font-size: 36px;
-    line-height: 49px;
+    font-size: 28px;
+    line-height: 36px;
+    @media (min-width: 992px) {
+        font-size: 36px;
+        line-height: 49px;   
+    }
+    margin-top: 0px;
     margin-bottom: $h1-margin;
     font-weight: $header-wight;
 }
@@ -41,6 +46,7 @@ body{
 }
 
 .text{
+    margin-top: 0px;
     font-size: $standart-text-size;
     line-height: $standart-text-line-height;
     margin-bottom: 16px;

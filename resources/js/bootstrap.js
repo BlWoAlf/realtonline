@@ -14,6 +14,9 @@ try {
     window.$ = window.jQuery = require('jquery');
 } catch (e) {}
 
+window.PhotoSwipe = require('photoswipe');
+window.PhotoSwipeUI_Default = require('./../../node_modules/photoswipe/src/js/ui/photoswipe-ui-default.js');
+
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting

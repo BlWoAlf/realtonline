@@ -115,16 +115,27 @@ class ProductScreen
         return [
             Column::make([
                 Input::make('product.title')->title('Название')->required(),
-                Input::make('product.price')->required()->title('Цена'),
-                Input::make('product.article')->title('Артикул')->placeholder('6230i'),
-                TinyMCE::make('product.content')->title('Описание товара'),
-                MultiFile::make('product.files')->title('картинки')->preview()
+                Input::make('product.price')->required()->title('Стоимость'),
+                Input::make('product.square')->required()->title('Площадь кв. м.'),
+                Select::make('product.type')->required()->title('Тип')->options(['Квартира' => 'Квартира', 'Дом' => 'Дом']),
+                Select::make('product.room_count')->required()->title('Количество комнат')->options([
+                    1 => 'одна комната/cтудия', 
+                    2 => '2-x комнатная',
+                    3 => '3-х комнатная',
+                    4 => '4-x комнатная',
+                    5 => '5-ти комнатная',
+                ]),
+                Input::make('product.properties.floor')->required()->title('Этаж'),
+                Checkbox::make('product.properties.elevator')->title('Лифт'),
+                TinyMCE::make('product.content')->title('Описание недвижимости'),
+                MultiFile::make('product.files')->title('фотографии')->preview()
             ]),
             Column::make([
-                Input::make('product.slug')->title('Вид в адресной строке'),
                 Relation::make('product.categories')->options(
                     Category::all()->pluck('title', 'id')->toArray()
-                )->title('Категории товара')->multiple()->defaultValue($categories),
+                )->title('Категории недвижимости')->multiple()->defaultValue($categories),
+                Input::make('product.slug')->title('Вид в адресной строке'),
+                Input::make('product.article')->title('Артикул')->placeholder('6230i'),
                 Input::make('product.meta.title')->title('TITLE (мета-тег)'),
                 Input::make('product.meta.description')->title('Description (мета-тег)'),
             ])->class('col col-md-4')
