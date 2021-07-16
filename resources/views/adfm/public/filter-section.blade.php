@@ -5,7 +5,15 @@
             <h1 class="h1-header align-center">Продолжить поиск недвижимости</h1>
             @endif
             <div class="row">
+                @php($categories = \App\Models\Adfm\Catalog\Category::getData())
+                @foreach ($categories[0] as $category)
                 <div class="col5">
+                    <div class="categories__category">
+                        <a href="{{route('adfm.show.category', $category)}}">{{$category->title}}</a>
+                    </div>
+                </div>
+                @endforeach
+                {{-- <div class="col5">
                     <div class="categories__category">
                         <a href="{{route('adfm.show.category', \App\Models\Adfm\Catalog\Category::find(1))}}">Купить</a>
                     </div>
@@ -14,7 +22,7 @@
                     <div class="categories__category">
                         <a href="{{route('adfm.show.category', \App\Models\Adfm\Catalog\Category::find(2))}}">Снять</a>
                     </div>
-                </div>
+                </div> --}}
                 <div class="col5">
                     <div class="categories__category">
                         <span>Продать</span>

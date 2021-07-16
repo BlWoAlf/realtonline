@@ -118,19 +118,23 @@ class ProductScreen
                 Input::make('product.price')->required()->title('Стоимость'),
                 Input::make('product.square')->required()->title('Площадь кв. м.'),
                 Select::make('product.type')->required()->title('Тип')->options(['Квартира' => 'Квартира', 'Дом' => 'Дом']),
-                Select::make('product.room_count')->required()->title('Количество комнат')->options([
-                    1 => 'одна комната/cтудия', 
-                    2 => '2-x комнатная',
-                    3 => '3-х комнатная',
-                    4 => '4-x комнатная',
-                    5 => '5-ти комнатная',
-                ]),
+                Select::make('product.room_count')->required()->title('Количество комнат')->options(
+                    // [
+                    // 1 => 'одна комната/cтудия', 
+                    // 2 => '2-x комнатная',
+                    // 3 => '3-х комнатная',
+                    // 4 => '4-x комнатная',
+                    // 5 => '5-ти комнатная',
+                    // ]
+                    config('filter-parametres.room_count')
+                ),
                 Input::make('product.properties.floor')->required()->title('Этаж'),
                 Checkbox::make('product.properties.elevator')->title('Лифт'),
                 TinyMCE::make('product.content')->title('Описание недвижимости'),
                 MultiFile::make('product.files')->title('фотографии')->preview()
             ]),
             Column::make([
+                Checkbox::make('product.elect')->title('Избранное'),
                 Relation::make('product.categories')->options(
                     Category::all()->pluck('title', 'id')->toArray()
                 )->title('Категории недвижимости')->multiple()->defaultValue($categories),

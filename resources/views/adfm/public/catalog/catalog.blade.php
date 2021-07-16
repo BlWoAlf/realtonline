@@ -2,7 +2,7 @@
 {{-- @section('meta-title', $catalog->title) --}}
 
 @section('content')
-@include('adfm::public.filter-section');
+@include('adfm::public.filter-section')
 <section class="section section_page section__catalog section__about-page section__main-catalog">
     <div class="container">
         <div class="section__header">

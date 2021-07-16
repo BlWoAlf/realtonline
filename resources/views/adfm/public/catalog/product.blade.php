@@ -186,6 +186,6 @@
         </div>
     </div>
 </section>
-@include('adfm::public.filter-section');
+@include('adfm::public.filter-section')
 @include('adfm::public.feedback-section')
 @endsection

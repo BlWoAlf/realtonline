@@ -17,6 +17,7 @@
                 <div class="result-window__error">
                     Заполните все поля
                 </div>
+                <button class="result-window__close-button">Хорошо</button>
             </div>
         </div>
     </div>
@@ -30,7 +31,8 @@
 
 <script>
     const myModal = new HystModal({
-        linkAttributeName: "data-hystmodal",   
+        linkAttributeName: "data-hystmodal",
+        backscroll: false,   
     });
 
     $('#{{$id}} .sendfeedback').on('click', function (){
@@ -67,5 +69,9 @@
         }
 
         myModal.open('#myModal');
+    });
+
+    $('.result-window__close-button').click(function(){
+        myModal.close('#myModal');
     });
 </script>

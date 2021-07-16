@@ -23,7 +23,7 @@ class PageController extends Controller
 
     public function showMainPage()
     {
-        $products = Product::inRandomOrder()->limit(8)->get();
+        $products = Product::where('elect', 1)->inRandomOrder()->limit(8)->get();
         return view('adfm::public.index', compact('products'));
     }
 

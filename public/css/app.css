@@ -8486,7 +8486,7 @@ body {
   line-height: 19px;
 }
 
-.feedback__form {
+.feedback__form, .result-window__close-button {
   font-size: 14px;
   line-height: 19px;
 }
@@ -9187,6 +9187,20 @@ input::-webkit-inner-spin-button {
 }
 .result-window__success.view, .result-window__error.view {
   display: block;
+}
+
+.result-window__close-button {
+  height: 43px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  color: #FFFFFF;
+  background-color: #07533D;
+  border-radius: 4px;
+  padding: 0 20px;
+}
+.result-window__close-button:focus {
+  outline: none;
 }
 
 .pagination {

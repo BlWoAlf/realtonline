@@ -36,7 +36,7 @@
                         </div>
                         <div class="contacts__socical">
                             <div class="contacts__inst">
-                                <a href=""><i class="fab fa-instagram"></i><span>@realtonline</span></a>
+                                <a href="" target="_blank"><i class="fab fa-instagram"></i><span>@realtonline</span></a>
                             </div>
                         </div>
                     </div>
