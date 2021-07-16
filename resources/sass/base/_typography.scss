@@ -228,3 +228,22 @@ body{
     line-height: 25px;
     margin-bottom: 8px;
 }
+
+.result-window{
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+.pagination__item{
+    font-size: 18px;
+
+    &:hover{
+        font-weight: bold;
+    }
+}
+
+.pagination__item_current{
+    font-size: 19px;
+    font-weight: bold;
+}

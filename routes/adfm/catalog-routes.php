@@ -31,7 +31,7 @@ Route::prefix('/admin')->middleware(['web', 'auth'])->namespace('App\Http\Contro
 Route::group(['namespace' => 'App\Http\Controllers\Site', 'middleware' => ['web']], function () {
     Route::get('/catalog', 'CatalogController@showCatalog')->name('adfm.show.catalog');
     Route::get('/catalog/category/{category:slug}', 'CatalogController@showCategory')->name('adfm.show.category');
-    Route::get('catalog/{product}', 'CatalogController@showProduct')->name('adfm.show.product');
+    Route::get('/catalog/{product}', 'CatalogController@showProduct')->name('adfm.show.product');
 
     Route::get('/ordering', 'CatalogController@showOrdering')->name('adfm.show.ordering');
     Route::post('/ordering', '\App\Http\Controllers\Admin\OrderController@store')->name('adfm.order.store');

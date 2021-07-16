@@ -15,7 +15,7 @@
                         <div class="row">
                             <div class="col-3">
                                 <div class="about__img">
-                                    <img src="../images/ico1.png">
+                                    <img src="{{asset('images/ico1.png')}}">
                                 </div>
                             </div>
                             <div class="col-9">
@@ -30,7 +30,7 @@
                         <div class="row">
                             <div class="col-3">
                                 <div class="about__img">
-                                    <img src="../images/ico2.png">
+                                    <img src="{{asset('images/ico2.png')}}">
                                 </div>
                             </div>
                             <div class="col-9">
@@ -45,7 +45,9 @@
             </div>
         </div>
         <div class="about__footer">
-            <button class="about__button">Консультация</button>
+            <a href="#section__feedback">
+                <button class="about__button">Консультация</button>
+            </a>
         </div>
     </div>
 </section>

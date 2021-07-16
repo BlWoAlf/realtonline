@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Adfm\Traits\AttachmentTrait;
 use App\Models\Adfm\Traits\Sluggable;
 use App\Models\Adfm\File;
+use WTolk\Eloquent\Filter;
 
 class Product extends Model
 {
@@ -15,6 +16,7 @@ class Product extends Model
     use SoftDeletes;
     use Sluggable;
     use AttachmentTrait;
+    use Filter;
 
     protected $casts = [
         'meta' => 'array',

@@ -9,9 +9,9 @@ use App\Models\Adfm\Catalog\Category;
 
 class CatalogController extends Controller
 {
-    public function showCatalog()
+    public function showCatalog(Request $request)
     {
-        $catalog = Product::get();
+        $catalog = Product::filter($request->input('filter'))->orderBy('updated_at', 'desc')->paginate(20)->withQueryString();
         return view('adfm::public.catalog.catalog', compact('catalog'));
     }
 
@@ -21,9 +21,9 @@ class CatalogController extends Controller
         return view('adfm::public.catalog.product', compact('product', 'products'));
     }
 
-    public function showCategory(Category $category)
+    public function showCategory(Category $category, Request $request)
     {
-        $catalog = $category->products()->get();
+        $catalog = $category->products()->filter($request->input('filter'))->orderBy('updated_at', 'desc')->paginate(20)->withQueryString();
         return view('adfm::public.catalog.catalog', compact('catalog'));
     }
 

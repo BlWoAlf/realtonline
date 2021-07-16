@@ -154,16 +154,16 @@
   align-items: center;
 }
 
-.product__price-info-box, .filter, .service, .horizontal-list, .pdoduct__main-info-box .main-info-box__item, .field__box label, .field__box, .contacts__socical a, .feedback__form .form, .header {
+.product__price-info-box, .filter, .service, .horizontal-list, .pagination, .pdoduct__main-info-box .main-info-box__item, .field__box label, .field__box, .contacts__socical a, .feedback__form .form, .header {
   display: flex;
   flex-direction: row;
 }
 
-.pdoduct__main-info-box .main-info-box__item, .field__box label, .field__box, .contacts__socical a, .feedback__form .form, .header {
+.pagination, .pdoduct__main-info-box .main-info-box__item, .field__box label, .field__box, .contacts__socical a, .feedback__form .form, .header {
   align-items: center;
 }
 
-.product__contacts-info-box .contacts-info-box__number a, .contacts__socical a, .contacts__phone a, .pic-link a {
+.pagination__item, .product__contacts-info-box .contacts-info-box__number a, .contacts__socical a, .contacts__phone a, .pic-link a {
   text-decoration: none;
 }
 
@@ -8554,6 +8554,24 @@ body {
   margin-bottom: 8px;
 }
 
+.result-window {
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+.pagination__item {
+  font-size: 18px;
+}
+.pagination__item:hover {
+  font-weight: bold;
+}
+
+.pagination__item_current {
+  font-size: 19px;
+  font-weight: bold;
+}
+
 .header {
   min-height: 100px;
   background: #07533D;
@@ -9153,6 +9171,48 @@ input::-webkit-inner-spin-button {
   .header__burger-button {
     display: none;
   }
+}
+
+.result-window {
+  padding: 20px 20px 25px;
+}
+
+.hystmodal__window {
+  border-radius: 4px;
+}
+
+.result-window__success, .result-window__error {
+  display: none;
+  color: #000000;
+}
+.result-window__success.view, .result-window__error.view {
+  display: block;
+}
+
+.pagination {
+  justify-content: center;
+  max-width: 100%;
+}
+
+.pagination__item {
+  color: #000000;
+  padding: 5px;
+  transition: 0.3s;
+}
+
+.pagination-previous, .pagination-next {
+  color: #07533D;
+}
+.pagination-previous i, .pagination-next i {
+  font-size: 18px;
+}
+
+.pagination__item_current {
+  color: #07533D;
+}
+
+.pagination__item_disable i {
+  color: #A8A8A8;
 }
 
 .section__main-catalog {

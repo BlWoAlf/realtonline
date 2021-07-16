@@ -1,0 +1,30 @@
+.pagination{
+    @extend %flex-center-row;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.pagination__item{
+    @extend %clean-link;
+    color: $black-color;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.pagination-previous, .pagination-next{
+    color: $layout-color;
+
+    i{
+        font-size: 18px;
+    }
+}
+
+.pagination__item_current{
+    color: $layout-color;
+}
+
+.pagination__item_disable{
+    i{
+        color: $grey-dark-light;
+    }
+}
